@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <title>BBB Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+  <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" 
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" 
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" 
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+
+  <link rel="stylesheet" href="../static/css/style.css">
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="jumbotron" >
+    <h1>Belly Button Biodiversity Dashboard</h1>
+    <p>Use the interactive charts below to explore the dataset</p><br>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-3">
+      <form>
+         <div class="form-group">
+            <label for="sel1">Select Sample:</label>
+              <select class="form-control" id="samples" onchange="optionChanged(this.value)">
+              </select>
+        </div>
+      </form>
+      <div id="sample_meta">
+        <table class="table table-bordered" id="myTable">
+            <thead>
+              <tr>
+                <th>Sample MetaData</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td id='metadat_text'>
+                    <p id='metadata1'></p>
+                    <p id='metadata2'></p>
+                    <p id='metadata3'></p>
+                    <p id='metadata4'></p>
+                    <p id='metadata5'></p>
+                    <p id='metadata6'></p>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-5" >
+        <div id="pie">
+        </div>
+    </div>
+    <div class="col-sm-12 col-md-4" >
+        <div id="meter"></div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12 col-md-12" >
+      <div id="bubble"></div>
+    </div>
+  </div>
+</div>
+<script src="{{ url_for('static', filename='js/plotly.js') }}"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,2 @@
+	web: gnuicorn app:app
+	
